@@ -1,6 +1,11 @@
 import _ from 'lodash'
+import * as style from './index.css'
+import './clearButton'
 
-document.getElementById('button1').addEventListener('click', function() {
+console.log(style)
+
+const buttonEl = document.getElementById('button1')
+buttonEl.addEventListener('click', function() {
     const h1El = document.getElementById('pageTitle')
     const featuresListEl = document.getElementById('featuresList')
 
@@ -16,5 +21,6 @@ document.getElementById('button1').addEventListener('click', function() {
         featuresListEl.appendChild(liEl)
     })
 
+})
 
-}) 
+buttonEl.classList.add(['button'])

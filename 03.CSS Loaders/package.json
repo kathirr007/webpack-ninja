@@ -4,12 +4,14 @@
   "description": "<p>Webpack 5 (2024).Basics to Advanced concepts like loaders ,plugins, Module Federation, Build production apps (React App)</p>",
   "main": "index.js",
   "scripts": {
-    "webpack": "webpack --config webpack.config.js --mode development"
+    "build": "webpack --config webpack.config.js --mode development --watch"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^7.1.1",
+    "style-loader": "^4.0.0",
     "webpack": "^5.91.0",
     "webpack-cli": "^5.1.4"
   },
