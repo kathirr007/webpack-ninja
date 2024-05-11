@@ -1,5 +1,6 @@
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
+const copyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
@@ -17,10 +18,10 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/i,
+        test: /\.(sa|sc|c)ss$/,
         use: [
           {loader: 'style-loader'},
-          {loader: 'css-loader', options: { modules: true }},
+          {loader: 'css-loader'},
           {loader: 'sass-loader', options: { sourceMap: true }},
         ]
       },
@@ -42,6 +43,15 @@ module.exports = {
       chunks: ['courses'],
       inject: true,
       filename: 'courses.html'
+    }),
+    new copyPlugin({
+      patterns: [
+        {
+          from: 'assets/images/**/*',
+          to: path.resolve(__dirname, 'dist'),
+          context: path.resolve(__dirname, 'src'),
+        }
+      ]
     })
   ]
 }
