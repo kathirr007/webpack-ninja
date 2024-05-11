@@ -1,6 +1,6 @@
-// import * as style from './clearButton.css'
+import * as style from './clearButton.css'
 
-// console.log(style)
+console.log(style)
 
 const buttonEl = document.createElement('button')
 buttonEl.innerText = 'Clear'
