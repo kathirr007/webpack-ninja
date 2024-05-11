@@ -1,0 +1,19 @@
+{
+  "name": "webpack5-ninja",
+  "version": "1.0.0",
+  "description": "<p>Webpack 5 (2024).Basics to Advanced concepts like loaders ,plugins, Module Federation, Build production apps (React App)</p>",
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack --config webpack.config.js --mode development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
