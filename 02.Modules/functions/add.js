@@ -18,9 +18,13 @@ const addFunctions = {
 
 // export default addFunctions
 
+// OR
+
 export default {
     add, addAndMultiply
 }
+
+// OR
 
 /* export {
     add, addAndMultiply
