@@ -1,0 +1,22 @@
+:global(#pageTitle) {
+  text-align: center;
+  img {
+    &:global(.webpack-logo), &:global(.avif-logo) {
+      width: 250px;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+  }
+}
+
+#featuresList {
+    color: orange;
+}
+.features-list {
+    color: red;
+}
+:global(.button) {
+  background: pink;
+}
