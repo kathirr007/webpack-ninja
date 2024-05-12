@@ -4,6 +4,13 @@ const CopyPlugin = require('copy-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const webpack = require('webpack')
+// const PurgeCSS = require('purgecss-webpack-plugin')
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
+const glob = require('glob')
+
+const purgePath = {
+  src: path.resolve(__dirname, 'src')
+}
 
 module.exports = {
   entry: {
@@ -36,6 +43,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new PurgeCSSPlugin({ // Purge/remove unused css
+      paths: glob.sync(`${purgePath.src}/**/*`, { nodir: true }),
+      safelist: ['unused-style'] // ignore list
+    }),
+
     new webpack.ProvidePlugin({ // Shimming
       mnt: 'moment',
       _: 'lodash',
@@ -53,7 +65,7 @@ module.exports = {
       inject: true,
       filename: 'courses.html'
     }),
-    new CopyPlugin({
+    new CopyPlugin({ // copy assets from src to dist or target folders
       patterns: [
         {
           from: 'assets/images/**/*',

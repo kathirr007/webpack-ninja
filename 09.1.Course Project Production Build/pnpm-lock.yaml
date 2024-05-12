@@ -34,12 +34,18 @@ devDependencies:
   css-loader:
     specifier: ^7.1.1
     version: 7.1.1(webpack@5.91.0)
+  glob:
+    specifier: ^10.3.15
+    version: 10.3.15
   html-webpack-plugin:
     specifier: ^5.6.0
     version: 5.6.0(webpack@5.91.0)
   mini-css-extract-plugin:
     specifier: ^2.9.0
     version: 2.9.0(webpack@5.91.0)
+  purgecss-webpack-plugin:
+    specifier: ^6.0.0
+    version: 6.0.0(webpack@5.91.0)
   sass:
     specifier: ^1.77.1
     version: 1.77.1
@@ -775,6 +781,11 @@ packages:
     engines: {node: '>=14'}
     dev: true
 
+  /commander@12.0.0:
+    resolution: {integrity: sha512-MwVNWlYjDTtOjX5PiD7o5pK0UrFU/OYgcJfjjK4RaHZETNtjJqrZa9Y9ds88+A+f+d5lv+561eZ+yCKoS3gbAA==}
+    engines: {node: '>=18'}
+    dev: true
+
   /commander@2.20.3:
     resolution: {integrity: sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==}
     dev: true
@@ -1352,9 +1363,9 @@ packages:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
     dev: true
 
-  /glob@10.3.14:
-    resolution: {integrity: sha512-4fkAqu93xe9Mk7le9v0y3VrPDqLKHarNi2s4Pv7f2yOvfhWfhc7hRPHC/JyqMqb8B/Dt/eGS4n7ykwf3fOsl8g==}
-    engines: {node: '>=16 || 14 >=14.17'}
+  /glob@10.3.15:
+    resolution: {integrity: sha512-0c6RlJt1TICLyvJYIApxb8GsXoai0KUP7AxKKAtsYXdgJR1mGEUa7DgwShbdk1nly0PYoZj01xd4hzbq3fsjpw==}
+    engines: {node: '>=16 || 14 >=14.18'}
     hasBin: true
     dependencies:
       foreground-child: 3.1.1
@@ -2170,6 +2181,25 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
+  /purgecss-webpack-plugin@6.0.0(webpack@5.91.0):
+    resolution: {integrity: sha512-Y96Tt3w0LhNUbd/xVbSQAMqdz9RtwOJ3A+OeVnqJzzkab7qzqSh537ym36JOtr7WVNev9LXHbXZUxCGJROrKgw==}
+    peerDependencies:
+      webpack: '>=5.0.0'
+    dependencies:
+      purgecss: 6.0.0
+      webpack: 5.91.0(webpack-cli@5.1.4)
+    dev: true
+
+  /purgecss@6.0.0:
+    resolution: {integrity: sha512-s3EBxg5RSWmpqd0KGzNqPiaBbWDz1/As+2MzoYVGMqgDqRTLBhJW6sywfTBek7OwNfoS/6pS0xdtvChNhFj2cw==}
+    hasBin: true
+    dependencies:
+      commander: 12.0.0
+      glob: 10.3.15
+      postcss: 8.4.38
+      postcss-selector-parser: 6.0.16
+    dev: true
+
   /qs@6.11.0:
     resolution: {integrity: sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==}
     engines: {node: '>=0.6'}
@@ -2297,7 +2327,7 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
     dependencies:
-      glob: 10.3.14
+      glob: 10.3.15
     dev: true
 
   /run-applescript@7.0.0:
