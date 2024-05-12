@@ -1,13 +1,16 @@
-import $ from 'jquery'
-import _ from 'lodash'
+// import $ from 'jquery'
+// import _ from 'lodash'
 import bootstrap from 'bootstrap'
 import Typed from 'typed.js'
 import validate from 'validate.js'
 import toastr from 'toastr'
+import {showDate} from './libs/showDate'
 // import showModal from "./components/modal";
 
 import './_vendor.scss'
 import './index.css'
+
+showDate()
 
 const footerCol1Items = ["Home", "About", "Contact us", "FAQ", "Blog"];
 const footerCol2Items = ["Flutter", "Javascript", "Java", "Nodejs", "Python"];

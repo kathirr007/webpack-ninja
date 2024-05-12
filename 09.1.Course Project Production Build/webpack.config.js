@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -35,6 +36,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.ProvidePlugin({ // Shimming
+      mnt: 'moment',
+      _: 'lodash',
+      $: 'jquery',
+    }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
       chunks: ['index'],
